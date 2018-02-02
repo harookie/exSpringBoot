@@ -19,17 +19,4 @@ public class MultiplicationServiceTest {
 
     @Autowired
     private MultiplicationService multiplicationService;
-
-    @Test
-    public void createRandomMultiplication() {
-        given(randomGeneratorService.generateRandomFactor()).
-                willReturn(50, 30);
-
-        Multiplication multiplication = multiplicationService.
-                createRandomMultiplication();
-
-        assertThat(multiplication.getFactorA()).isEqualTo(50);
-        assertThat(multiplication.getFactorB()).isEqualTo(30);
-        assertThat(multiplication.getResult()).isEqualTo(1500);
-    }
 }
