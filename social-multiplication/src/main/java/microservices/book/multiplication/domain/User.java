@@ -1,12 +1,26 @@
 package microservices.book.multiplication.domain;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
-@Data
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 @RequiredArgsConstructor
-@NoArgsConstructor(force = true)
+@Getter
+@ToString
+@EqualsAndHashCode
+@Entity
 public final class User {
+    @Id
+    @GeneratedValue
+    @Column(name = "USER_ID")
+    private Long id;
+
     private final String alias;
+
+    protected User() {
+        alias = null;
+    }
 }
